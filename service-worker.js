@@ -1,10 +1,11 @@
-﻿const CACHE_NAME = "namaskar-pwa-v1";
+﻿const CACHE_NAME = "namaskar-pwa-v2";
 const CORE_ASSETS = [
   "./",
   "index.html",
   "styles.css",
   "app.js",
   "manifest.webmanifest",
+  "favicon.svg",
   "data/asanas.json",
   "data/study.json",
   "icons/icon-192.png",
@@ -36,3 +37,4 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
+

@@ -231,8 +231,11 @@ function renderPractice() {
     const div = document.createElement("div");
     div.className = "sequence-item";
     div.innerHTML = `
-      <div class="sequence-index">${index + 1}</div>
-      <div><h3>${escapeHtml(capitalize(asana.ru))}</h3><p>${escapeHtml(asana.sanskrit)} · ${asana.minutes} мин</p></div>
+      <div class="sequence-visual">
+        <img src="${escapeHtml(asana.image)}" alt="${escapeHtml(asana.ru)}" loading="lazy">
+        <span>${index + 1}</span>
+      </div>
+      <div><h3>${escapeHtml(capitalize(asana.ru))}</h3><p>${escapeHtml(asana.sanskrit)} · ${escapeHtml(asana.transliteration)} · ${asana.minutes} мин</p></div>
       <button class="remove-button" type="button" title="Убрать">×</button>
     `;
     div.querySelector("button").addEventListener("click", () => removeFromPractice(index));
@@ -321,11 +324,14 @@ function renderStudy() {
     const card = document.createElement("article");
     card.className = "study-card";
     card.innerHTML = `
-      <h3>${escapeHtml(item.sanskrit)}</h3>
-      <p class="translit">${escapeHtml(item.transliteration)} · ${escapeHtml(item.ru)}</p>
-      <p class="syllables">${escapeHtml(item.syllables)}</p>
-      <p class="parts">${escapeHtml(item.parts)}</p>
-      <p class="parts"><strong>Смысл:</strong> ${escapeHtml(item.literal)}</p>
+      <img src="visuals/${escapeHtml(item.id)}.svg" alt="${escapeHtml(item.ru)}" loading="lazy">
+      <div class="study-content">
+        <h3>${escapeHtml(item.sanskrit)}</h3>
+        <p class="translit">${escapeHtml(item.transliteration)} · ${escapeHtml(item.ru)}</p>
+        <p class="syllables">${escapeHtml(item.syllables)}</p>
+        <p class="parts">${escapeHtml(item.parts)}</p>
+        <p class="parts"><strong>Смысл:</strong> ${escapeHtml(item.literal)}</p>
+      </div>
     `;
     els.studyList.appendChild(card);
   });
@@ -358,4 +364,5 @@ async function init() {
 init().catch((error) => {
   document.body.innerHTML = `<main class="app-shell"><div class="empty">Не удалось загрузить данные: ${escapeHtml(error.message)}</div></main>`;
 });
+
 

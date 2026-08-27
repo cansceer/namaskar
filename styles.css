@@ -59,14 +59,19 @@ summary { color: #7a5d17; font-size: 13px; font-weight: 800; }
 .generator { display: grid; gap: 12px; margin-bottom: 12px; }
 .generator label strong { color: #8b6517; }
 input[type="range"] { accent-color: var(--sun-strong); width: 100%; }
-.sequence-item { display: grid; grid-template-columns: 42px 1fr 38px; gap: 10px; align-items: center; padding: 10px; }
+.sequence-item { display: grid; grid-template-columns: 64px 1fr 38px; gap: 10px; align-items: center; padding: 10px; }
+.sequence-visual { position: relative; width: 64px; height: 64px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: #fff3c4; }
+.sequence-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sequence-visual span { position: absolute; left: 6px; top: 6px; min-width: 24px; height: 24px; display: grid; place-items: center; border-radius: 999px; background: rgba(255, 253, 247, .92); color: #735817; font-weight: 900; font-size: 12px; }
 .sequence-index { width: 38px; height: 38px; display: grid; place-items: center; background: #fff1bf; border-radius: 8px; color: #735817; font-weight: 900; }
 .sequence-item p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
 .remove-button { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: #fff7df; color: #8b5a2b; }
 .instruction-panel { margin-top: 12px; }
 .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
 textarea { resize: vertical; min-height: 220px; line-height: 1.45; }
-.study-card { padding: 12px; }
+.study-card { display: grid; grid-template-columns: 78px 1fr; gap: 12px; align-items: start; padding: 10px; }
+.study-card img { width: 78px; height: 78px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); background: #fff3c4; }
+.study-content { min-width: 0; }
 .study-card .parts { color: #635335; font-size: 13px; line-height: 1.45; }
 .study-card .syllables { margin: 8px 0; color: #936916; font-weight: 800; }
 .bottom-nav { position: fixed; left: 50%; bottom: max(12px, env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(520px, calc(100% - 24px)); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; background: rgba(255,253,247,.94); border: 1px solid var(--line); border-radius: 12px; padding: 6px; box-shadow: var(--shadow); backdrop-filter: blur(10px); }
@@ -86,3 +91,4 @@ textarea { resize: vertical; min-height: 220px; line-height: 1.45; }
   .asana-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .practice-head, .generator, .sequence, .instruction-panel { max-width: 760px; margin-left: auto; margin-right: auto; }
 }
+
