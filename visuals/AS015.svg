@@ -1,1 +1,22 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280"><rect width="420" height="280" rx="16" fill="#FAFAF8"/><rect width="420" height="70" fill="#4D6BD3"/><text x="24" y="36" font-family="Arial" font-size="22" font-weight="700" fill="white">Ashwa Sanchalanasana</text><text x="24" y="58" font-family="Arial" font-size="14" fill="white">низкий выпад</text><g stroke="#4D6BD3" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="210" cy="108" r="18"/><path d="M210 128 C190 148 178 168 166 196"/><path d="M196 146 C166 140 140 128 116 110"/><path d="M198 148 C232 142 260 130 294 114"/><path d="M168 196 C140 214 116 228 88 240"/><path d="M168 196 C206 212 242 228 284 242"/></g><line x1="62" y1="244" x2="338" y2="244" stroke="#D9D6CF" stroke-width="4"/><text x="24" y="258" font-family="Arial" font-size="13" fill="#555">Виньяса и выпады</text><text x="320" y="258" font-family="Arial" font-size="12" fill="#777">schema v1</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Ashwa Sanchalanasana">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8dc"/>
+      <stop offset="1" stop-color="#fffdf7"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#a57a24" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="420" height="280" rx="18" fill="url(#bg)"/>
+  <circle cx="354" cy="42" r="68" fill="#dce9c9" opacity="0.62"/>
+  <circle cx="66" cy="238" r="54" fill="#f7e7a8" opacity="0.48"/>
+  <rect x="52" y="224" width="316" height="12" rx="6" fill="#f7e29b"/>
+  <g filter="url(#soft)"><g stroke='#6f946f' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'><circle cx='210' cy='86' r='14' fill='#fffaf0'/><path d='M210 102 L210 154'/><path d='M210 154 L166 224'/><path d='M210 154 L268 224'/><path d='M210 124 L150 134'/><path d='M210 124 L278 114'/></g></g>
+  <rect x="18" y="18" width="384" height="56" rx="12" fill="#fffdf7" opacity="0.88"/>
+  <text x="34" y="40" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#302816">Ashwa Sanchalanasana</text>
+  <text x="34" y="60" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#6f946f">Ашва Санчаланасана</text>
+  <text x="34" y="262" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#5f5239">низкий выпад</text>
+  <text x="344" y="262" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="11" fill="#8b7b55">начальный</text>
+  <text x="34" y="246" font-family="Inter, Arial, sans-serif" font-size="11" fill="#8b7b55">Виньяса и выпады</text>
+</svg>
