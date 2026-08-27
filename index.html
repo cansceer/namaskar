@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6d97b">
+  <meta name="description" content="Namaskar: библиотека асан и конструктор практик йоги">
+  <title>Namaskar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Namaskar</p>
+        <h1>Библиотека йоги</h1>
+      </div>
+      <button class="icon-button" id="installBtn" type="button" title="Установить приложение" hidden>↓</button>
+    </header>
+
+    <main>
+      <section class="view is-active" id="libraryView" data-view="library">
+        <div class="toolbar">
+          <label class="search-field">
+            <span>Поиск</span>
+            <input id="searchInput" type="search" placeholder="асана, раздел, эффект">
+          </label>
+          <div class="filter-grid">
+            <label>
+              <span>Раздел</span>
+              <select id="sectionFilter"></select>
+            </label>
+            <label>
+              <span>Уровень</span>
+              <select id="levelFilter"></select>
+            </label>
+          </div>
+          <div class="chips" id="goalChips"></div>
+          <div class="contra-panel">
+            <p>Ограничения</p>
+            <label><input type="checkbox" value="knee"> колени</label>
+            <label><input type="checkbox" value="lowback"> поясница</label>
+            <label><input type="checkbox" value="wristshoulder"> запястья/плечи</label>
+            <label><input type="checkbox" value="menstruation"> менструация</label>
+            <label><input type="checkbox" value="pressure"> давление/глаукома</label>
+            <label><input type="checkbox" value="pregnancy"> беременность</label>
+          </div>
+        </div>
+        <div class="stats-line"><span id="resultCount">0 асан</span><span id="filteredNote"></span></div>
+        <div class="asana-list" id="asanaList"></div>
+      </section>
+
+      <section class="view" id="practiceView" data-view="practice">
+        <div class="practice-head">
+          <div>
+            <p class="eyebrow">Практика</p>
+            <h2><span id="practiceCount">0</span> асан · <span id="practiceTime">0</span> мин</h2>
+          </div>
+          <button class="ghost-button" id="clearPractice" type="button">Очистить</button>
+        </div>
+
+        <div class="generator">
+          <label>
+            <span>Длительность</span>
+            <input id="targetMinutes" type="range" min="20" max="90" step="5" value="45">
+            <strong><span id="targetLabel">45</span> мин</strong>
+          </label>
+          <label>
+            <span>Фокус</span>
+            <select id="focusSelect"></select>
+          </label>
+          <button class="primary-button" id="randomPractice" type="button">Собрать практику</button>
+        </div>
+
+        <div class="sequence" id="practiceList"></div>
+
+        <div class="instruction-panel">
+          <div class="panel-head">
+            <h3>Текст-инструкция</h3>
+            <button class="ghost-button" id="copyInstruction" type="button">Копировать</button>
+          </div>
+          <textarea id="instructionText" rows="12" readonly></textarea>
+        </div>
+      </section>
+
+      <section class="view" id="studyView" data-view="study">
+        <div class="toolbar">
+          <label class="search-field">
+            <span>Учить названия</span>
+            <input id="studySearch" type="search" placeholder="adho, шавасана, собака">
+          </label>
+        </div>
+        <div class="study-list" id="studyList"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+      <button class="is-active" data-tab="library" type="button">Асаны</button>
+      <button data-tab="practice" type="button">Практика</button>
+      <button data-tab="study" type="button">Учить</button>
+    </nav>
+  </div>
+
+  <template id="asanaCardTemplate">
+    <article class="asana-card">
+      <img alt="" loading="lazy">
+      <div class="asana-body">
+        <div class="asana-title-row">
+          <div>
+            <h3></h3>
+            <p class="sanskrit"></p>
+            <p class="translit"></p>
+          </div>
+          <button class="add-button" type="button" title="Добавить в практику">+</button>
+        </div>
+        <p class="effect"></p>
+        <details>
+          <summary>Выполнение и ограничения</summary>
+          <p class="execution"></p>
+          <p class="contra"></p>
+        </details>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
