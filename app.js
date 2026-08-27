@@ -96,13 +96,25 @@ function escapeHtml(value) {
   return String(value || "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
 }
 
+async function fetchJson(path) {
+  const response = await fetch(path, { cache: "no-store" });
+  const contentType = response.headers.get("content-type") || "";
+  if (!response.ok) {
+    throw new Error(`${path} не найден. Проверьте, что папка data загружена рядом с index.html.`);
+  }
+  if (!contentType.includes("json")) {
+    throw new Error(`${path} вернул не JSON. Скорее всего, на хостинг не попала папка data или выбран неверный root directory.`);
+  }
+  return response.json();
+}
+
 async function loadData() {
-  const [asanasRes, studyRes] = await Promise.all([
-    fetch("data/asanas.json"),
-    fetch("data/study.json"),
+  const [asanas, study] = await Promise.all([
+    fetchJson("data/asanas.json"),
+    fetchJson("data/study.json"),
   ]);
-  state.asanas = await asanasRes.json();
-  state.study = await studyRes.json();
+  state.asanas = Array.isArray(asanas) ? asanas : [];
+  state.study = Array.isArray(study) ? study : [];
   state.practice = JSON.parse(localStorage.getItem("namaskar.practice") || "[]");
 }
 
@@ -346,3 +358,4 @@ async function init() {
 init().catch((error) => {
   document.body.innerHTML = `<main class="app-shell"><div class="empty">Не удалось загрузить данные: ${escapeHtml(error.message)}</div></main>`;
 });
+
