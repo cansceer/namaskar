@@ -4,19 +4,15 @@
       <stop offset="0" stop-color="#fff8dc"/>
       <stop offset="1" stop-color="#fffdf7"/>
     </linearGradient>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#a57a24" flood-opacity="0.12"/>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#a57a24" flood-opacity="0.12"/>
     </filter>
   </defs>
   <rect width="420" height="280" rx="18" fill="url(#bg)"/>
-  <circle cx="354" cy="42" r="68" fill="#d7e6bd" opacity="0.62"/>
-  <circle cx="66" cy="238" r="54" fill="#f7e7a8" opacity="0.48"/>
-  <rect x="52" y="224" width="316" height="12" rx="6" fill="#f5e8a6"/>
-  <g filter="url(#soft)"><g stroke='#7f8c7b' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'><circle cx='136' cy='178' r='14' fill='#fffaf0'/><path d='M150 178 C194 176 238 178 292 188'/><path d='M196 184 L156 224'/><path d='M236 186 L294 224'/><path d='M184 174 L158 146'/><path d='M226 178 L270 152'/></g></g>
-  <rect x="18" y="18" width="384" height="56" rx="12" fill="#fffdf7" opacity="0.88"/>
-  <text x="34" y="40" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#302816">Ananda Balasana</text>
-  <text x="34" y="60" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#7f8c7b">Ананда Баласана</text>
-  <text x="34" y="262" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#5f5239">счастливый ребенок</text>
-  <text x="344" y="262" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="11" fill="#8b7b55">начальный</text>
-  <text x="34" y="246" font-family="Inter, Arial, sans-serif" font-size="11" fill="#8b7b55">Восстановление и таз</text>
+  <circle cx="355" cy="36" r="72" fill="#e7efcf" opacity="0.72"/>
+  <circle cx="68" cy="232" r="54" fill="#f8e7a7" opacity="0.44"/>
+  <rect x="58" y="224" width="304" height="12" rx="6" fill="#f5dea1" opacity="0.95"/>
+  <g filter="url(#softShadow)">
+    <g stroke='#72846f' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'><circle cx='142' cy='122' r='14' fill='#fffaf0'/><path d='M156 124 C190 128 210 145 226 174'/><path d='M226 174 C199 184 165 183 138 168'/><path d='M172 134 L114 166'/><path d='M205 164 L280 164'/></g>
+  </g>
 </svg>

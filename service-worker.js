@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = "namaskar-pwa-v3";
+﻿const CACHE_NAME = "namaskar-pwa-v4";
 const CORE_ASSETS = [
   "./",
   "index.html",
@@ -37,5 +37,6 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
+
 
 
