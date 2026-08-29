@@ -1,4 +1,4 @@
-﻿const state = {
+const state = {
   asanas: [],
   study: [],
   filtered: [],
@@ -32,7 +32,7 @@ const els = {
 };
 
 const GOALS = [
-  { label: "Растяжка", tokens: ["вытяж", "задняя", "наклон", "бедр"] },
+  { label: "Растяжка", tokens: ["вытяж", "задняя", "поверхност", "наклон", "бедр"] },
   { label: "Ноги", tokens: ["ног", "стоп", "воин", "стул", "выпад"] },
   { label: "Поясница", tokens: ["пояс", "спина", "крест"] },
   { label: "Таз", tokens: ["таз", "пах", "ягод", "бедр"] },
@@ -192,7 +192,7 @@ function renderLibrary() {
     node.querySelector("h3").textContent = capitalize(asana.ru);
     node.querySelector(".sanskrit").textContent = asana.sanskrit;
     node.querySelector(".translit").textContent = asana.transliteration;
-    node.querySelector(".effect").textContent = `${asana.section} · ${asana.goals} · ${asana.minutes} мин`;
+    node.querySelector(".effect").textContent = `${asana.section} · ${asana.goals}`;
     node.querySelector(".execution").textContent = asana.execution;
     node.querySelector(".contra").textContent = asana.contraindications;
     node.querySelector(".add-button").addEventListener("click", () => addToPractice(asana));

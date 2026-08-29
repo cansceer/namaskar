@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #fffaf0;
   --paper: #fffdf7;
   --ink: #302816;
@@ -9,8 +9,8 @@
   --leaf: #7c9b72;
   --clay: #d9a98f;
   --shadow: 0 12px 30px rgba(105, 78, 29, .12);
-  --font-text: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  --font-heading: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-text: Inter, sans-serif;
+  --font-heading: Manrope, sans-serif;
 }
 * { box-sizing: border-box; }
 html { min-height: 100%; background: var(--bg); color: var(--ink); }
@@ -26,9 +26,9 @@ h2 { font-size: 22px; }
 h3 { font-size: 16px; }
 .icon-button, .ghost-button, .primary-button, .add-button { border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 8px; min-height: 42px; padding: 0 14px; box-shadow: none; }
 .icon-button { width: 44px; padding: 0; font-size: 22px; background: #ffe59a; border-color: #edc75b; }
-.primary-button { background: var(--sun-strong); border-color: var(--sun-strong); color: #fff; font-weight: 800; width: 100%; }
+.primary-button { background: var(--sun-strong); border-color: var(--sun-strong); color: #fff; font-weight: 600; width: 100%; }
 .ghost-button { color: #735817; background: #fff8df; }
-.add-button { width: 40px; min-width: 40px; height: 40px; padding: 0; background: #ffeaa8; border-color: #eac760; font-weight: 900; font-size: 22px; }
+.add-button { width: 32px; min-width: 32px; height: 32px; min-height: 32px; padding: 0; border-radius: 7px; background: #fff4ce; border-color: #ddc477; font-weight: 500; font-size: 19px; line-height: 1; }
 .view { display: none; }
 .view.is-active { display: block; }
 .toolbar, .generator, .instruction-panel { background: rgba(255, 253, 247, .88); border: 1px solid var(--line); border-radius: 8px; padding: 12px; box-shadow: var(--shadow); }
@@ -50,7 +50,7 @@ input[type="search"]:focus, select:focus, textarea:focus { border-color: var(--s
 .asana-card { display: grid; grid-template-columns: 108px 1fr; min-height: 150px; }
 .asana-card img { width: 108px; height: 100%; object-fit: contain; object-position: center top; background: #fff8dc; border-right: 1px solid var(--line); }
 .asana-body { padding: 11px; min-width: 0; }
-.asana-title-row { display: grid; grid-template-columns: 1fr 40px; gap: 10px; align-items: start; }
+.asana-title-row { display: grid; grid-template-columns: 1fr 32px; gap: 10px; align-items: start; }
 .sanskrit, .translit, .effect, .contra, .execution { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.35; }
 .translit { color: #9a6c12; font-weight: 700; }
 .effect { color: #536d4d; }
@@ -76,7 +76,7 @@ textarea { resize: vertical; min-height: 220px; line-height: 1.45; }
 .study-card .parts { color: #635335; font-size: 13px; line-height: 1.45; }
 .study-card .syllables { margin: 8px 0; color: #936916; font-weight: 800; }
 .bottom-nav { position: fixed; left: 50%; bottom: max(12px, env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(520px, calc(100% - 24px)); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; background: rgba(255,253,247,.94); border: 1px solid var(--line); border-radius: 12px; padding: 6px; box-shadow: var(--shadow); backdrop-filter: blur(10px); }
-.bottom-nav button { min-height: 46px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-weight: 800; }
+.bottom-nav button { min-height: 42px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-weight: 600; }
 .bottom-nav button.is-active { background: var(--sun); color: #5f4310; }
 .empty { text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; padding: 26px 16px; background: rgba(255,253,247,.66); }
 @media (min-width: 760px) {
