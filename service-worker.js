@@ -1,4 +1,4 @@
-const CACHE_NAME = "namaskar-pwa-v5";
+const CACHE_NAME = "namaskar-pwa-v6";
 const CORE_ASSETS = [
   "./",
   "index.html",
@@ -26,15 +26,21 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  const fetchAndCache = () => fetch(event.request).then((response) => {
+    const copy = response.clone();
+    caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+    return response;
+  });
+
+  if (event.request.destination === "image") {
+    event.respondWith(fetchAndCache().catch(() => caches.match(event.request)));
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).then((response) => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        return response;
-      }).catch(() => caches.match("index.html"));
-    })
+    caches.match(event.request).then((cached) => cached || fetchAndCache())
+      .catch(() => caches.match("index.html"))
   );
 });
 

@@ -10,6 +10,8 @@ const state = {
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
+const IMAGE_VERSION = "20260829-2";
+const imageUrl = (path) => `${path}?v=${IMAGE_VERSION}`;
 
 const els = {
   search: $("#searchInput"),
@@ -187,7 +189,7 @@ function renderLibrary() {
     const node = template.content.cloneNode(true);
     const card = node.querySelector(".asana-card");
     const img = node.querySelector("img");
-    img.src = asana.image;
+    img.src = imageUrl(asana.image);
     img.alt = asana.ru;
     node.querySelector("h3").textContent = capitalize(asana.ru);
     node.querySelector(".sanskrit").textContent = asana.sanskrit;
@@ -232,7 +234,7 @@ function renderPractice() {
     div.className = "sequence-item";
     div.innerHTML = `
       <div class="sequence-visual">
-        <img src="${escapeHtml(asana.image)}" alt="${escapeHtml(asana.ru)}" loading="lazy">
+        <img src="${escapeHtml(imageUrl(asana.image))}" alt="${escapeHtml(asana.ru)}" loading="lazy">
         <span>${index + 1}</span>
       </div>
       <div><h3>${escapeHtml(capitalize(asana.ru))}</h3><p>${escapeHtml(asana.sanskrit)} · ${escapeHtml(asana.transliteration)} · ${asana.minutes} мин</p></div>
@@ -324,7 +326,7 @@ function renderStudy() {
     const card = document.createElement("article");
     card.className = "study-card";
     card.innerHTML = `
-      <img src="visuals/${escapeHtml(item.id)}.svg" alt="${escapeHtml(item.ru)}" loading="lazy">
+      <img src="visuals/${escapeHtml(item.id)}.svg?v=${IMAGE_VERSION}" alt="${escapeHtml(item.ru)}" loading="lazy">
       <div class="study-content">
         <h3>${escapeHtml(item.sanskrit)}</h3>
         <p class="translit">${escapeHtml(item.transliteration)} · ${escapeHtml(item.ru)}</p>
