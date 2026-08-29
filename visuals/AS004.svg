@@ -1,18 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Gomukhasana Hasta">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff8dc"/>
-      <stop offset="1" stop-color="#fffdf7"/>
-    </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#a57a24" flood-opacity="0.12"/>
-    </filter>
-  </defs>
-  <rect width="420" height="280" rx="18" fill="url(#bg)"/>
-  <circle cx="355" cy="36" r="72" fill="#f3e2b4" opacity="0.72"/>
-  <circle cx="68" cy="232" r="54" fill="#f8e7a7" opacity="0.44"/>
-  <rect x="58" y="224" width="304" height="12" rx="6" fill="#f8e7a7" opacity="0.95"/>
-  <g filter="url(#softShadow)">
-    <g stroke='#927643' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'><circle cx='210' cy='64' r='14' fill='#fffaf0'/><path d='M210 80 L210 152'/><path d='M210 152 C182 176 182 200 218 224'/><path d='M210 152 C242 176 242 200 202 224'/><path d='M204 102 L176 48'/><path d='M218 112 L254 176'/></g>
-  </g>
+<svg width="420" height="280" viewBox="0 0 420 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_166_84)">
+<path d="M402 0H18C8.05887 0 0 8.05887 0 18V262C0 271.941 8.05887 280 18 280H402C411.941 280 420 271.941 420 262V18C420 8.05887 411.941 0 402 0Z" fill="url(#paint0_linear_166_84)"/>
+<path opacity="0.72" d="M355 108C394.765 108 427 75.7645 427 36C427 -3.7645 394.765 -36 355 -36C315.235 -36 283 -3.7645 283 36C283 75.7645 315.235 108 355 108Z" fill="#F3E2B4"/>
+<path opacity="0.44" d="M68 286C97.8234 286 122 261.823 122 232C122 202.177 97.8234 178 68 178C38.1766 178 14 202.177 14 232C14 261.823 38.1766 286 68 286Z" fill="#F8E7A7"/>
+<path opacity="0.95" d="M356 224H64C60.6863 224 58 226.686 58 230C58 233.314 60.6863 236 64 236H356C359.314 236 362 233.314 362 230C362 226.686 359.314 224 356 224Z" fill="#F8E7A7"/>
+<path d="M211.5 146.5L197.5 55.5L211.5 83V129.5L259.5 138L211.5 146.5ZM211.5 129.5V146.5" stroke="#927643" stroke-width="9" stroke-linejoin="round"/>
+<path d="M210 104C217.732 104 224 97.732 224 90C224 82.268 217.732 76 210 76C202.268 76 196 82.268 196 90C196 97.732 202.268 104 210 104Z" fill="#FFFAF0" stroke="#927643" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 106V188" stroke="#927643" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 188L124 228.5L210 254" stroke="#927643" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 188L292 230L212 253" stroke="#927643" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_166_84" x1="0" y1="0" x2="258.462" y2="387.692" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFF8DC"/>
+<stop offset="1" stop-color="#FFFDF7"/>
+</linearGradient>
+<clipPath id="clip0_166_84">
+<rect width="420" height="280" fill="white"/>
+</clipPath>
+</defs>
 </svg>

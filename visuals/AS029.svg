@@ -1,18 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Parivrtta Parsvakonasana">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff8dc"/>
-      <stop offset="1" stop-color="#fffdf7"/>
-    </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#a57a24" flood-opacity="0.12"/>
-    </filter>
-  </defs>
-  <rect width="420" height="280" rx="18" fill="url(#bg)"/>
-  <circle cx="355" cy="36" r="72" fill="#e8ddf2" opacity="0.72"/>
-  <circle cx="68" cy="232" r="54" fill="#f8e7a7" opacity="0.44"/>
-  <rect x="58" y="224" width="304" height="12" rx="6" fill="#f4e1a1" opacity="0.95"/>
-  <g filter="url(#softShadow)">
-    <g stroke='#8270a0' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'><circle cx='160' cy='94' r='14' fill='#fffaf0'/><path d='M174 104 L232 154'/><path d='M232 154 L154 224'/><path d='M232 154 L324 224'/><path d='M190 118 L142 174'/><path d='M190 118 L268 68'/></g>
-  </g>
+<svg width="420" height="280" viewBox="0 0 420 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_175_130)">
+<path d="M402 0H18C8.05887 0 0 8.05887 0 18V262C0 271.941 8.05887 280 18 280H402C411.941 280 420 271.941 420 262V18C420 8.05887 411.941 0 402 0Z" fill="url(#paint0_linear_175_130)"/>
+<path opacity="0.72" d="M355 108C394.765 108 427 75.7645 427 36C427 -3.7645 394.765 -36 355 -36C315.235 -36 283 -3.7645 283 36C283 75.7645 315.235 108 355 108Z" fill="#E8DDF2"/>
+<path opacity="0.44" d="M68 286C97.8234 286 122 261.823 122 232C122 202.177 97.8234 178 68 178C38.1766 178 14 202.177 14 232C14 261.823 38.1766 286 68 286Z" fill="#F8E7A7"/>
+<path opacity="0.95" d="M356 224H64C60.6863 224 58 226.686 58 230C58 233.314 60.6863 236 64 236H356C359.314 236 362 233.314 362 230C362 226.686 359.314 224 356 224Z" fill="#F4E1A1"/>
+<path d="M142 151C149.732 151 156 144.732 156 137C156 129.268 149.732 123 142 123C134.268 123 128 129.268 128 137C128 144.732 134.268 151 142 151Z" fill="#FFFAF0" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M156.5 139.5L232 161.5" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M235 161.002L156.5 180.502V223.502" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M235.5 161.502L301.5 221.502" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158.5 160L162.5 142.5L187.5 160L152 174.5L158.5 160Z" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.45" d="M122.796 107.688C123.591 107.921 124.047 108.754 123.814 109.549L120.017 122.504C119.784 123.299 118.951 123.755 118.156 123.522C117.361 123.289 116.905 122.456 117.138 121.661L120.513 110.145L108.997 106.77C108.202 106.537 107.747 105.704 107.98 104.909C108.213 104.114 109.046 103.658 109.841 103.891L122.796 107.688ZM110.569 161.847C110.383 162.654 109.578 163.158 108.771 162.972L95.615 159.943C94.8077 159.757 94.304 158.952 94.4899 158.144C94.6757 157.337 95.4809 156.833 96.2882 157.019L107.982 159.712L110.675 148.018C110.861 147.211 111.666 146.707 112.473 146.893C113.281 147.079 113.784 147.884 113.598 148.691L110.569 161.847ZM122.374 109.127L123.094 110.443C113.473 115.703 107.267 123.385 104.956 132.117C102.645 140.845 104.178 150.804 110.379 160.715L109.107 161.51L107.836 162.306C101.263 151.8 99.5022 140.995 102.055 131.349C104.608 121.708 111.422 113.406 121.655 107.811L122.374 109.127Z" fill="#8270A0"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_175_130" x1="0" y1="0" x2="258.462" y2="387.692" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFF8DC"/>
+<stop offset="1" stop-color="#FFFDF7"/>
+</linearGradient>
+<clipPath id="clip0_175_130">
+<rect width="420" height="280" fill="white"/>
+</clipPath>
+</defs>
 </svg>

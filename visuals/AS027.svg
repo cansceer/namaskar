@@ -1,18 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" role="img" aria-label="Parivrtta Trikonasana">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff8dc"/>
-      <stop offset="1" stop-color="#fffdf7"/>
-    </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#a57a24" flood-opacity="0.12"/>
-    </filter>
-  </defs>
-  <rect width="420" height="280" rx="18" fill="url(#bg)"/>
-  <circle cx="355" cy="36" r="72" fill="#e8ddf2" opacity="0.72"/>
-  <circle cx="68" cy="232" r="54" fill="#f8e7a7" opacity="0.44"/>
-  <rect x="58" y="224" width="304" height="12" rx="6" fill="#f4e1a1" opacity="0.95"/>
-  <g filter="url(#softShadow)">
-    <g stroke='#8270a0' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'><circle cx='168' cy='108' r='14' fill='#fffaf0'/><path d='M180 118 L224 152'/><path d='M224 152 L138 224'/><path d='M224 152 L318 224'/><path d='M196 132 L140 154'/><path d='M196 132 L250 78'/></g>
-  </g>
+<svg width="420" height="280" viewBox="0 0 420 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_175_84)">
+<path d="M402 0H18C8.05887 0 0 8.05887 0 18V262C0 271.941 8.05887 280 18 280H402C411.941 280 420 271.941 420 262V18C420 8.05887 411.941 0 402 0Z" fill="url(#paint0_linear_175_84)"/>
+<path opacity="0.72" d="M355 108C394.765 108 427 75.7645 427 36C427 -3.7645 394.765 -36 355 -36C315.235 -36 283 -3.7645 283 36C283 75.7645 315.235 108 355 108Z" fill="#E8DDF2"/>
+<path opacity="0.44" d="M68 286C97.8234 286 122 261.823 122 232C122 202.177 97.8234 178 68 178C38.1766 178 14 202.177 14 232C14 261.823 38.1766 286 68 286Z" fill="#F8E7A7"/>
+<path opacity="0.95" d="M356 224H64C60.6863 224 58 226.686 58 230C58 233.314 60.6863 236 64 236H356C359.314 236 362 233.314 362 230C362 226.686 359.314 224 356 224Z" fill="#F4E1A1"/>
+<path d="M125 153C132.732 153 139 146.732 139 139C139 131.268 132.732 125 125 125C117.268 125 111 131.268 111 139C111 146.732 117.268 153 125 153Z" fill="#FFFAF0" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142 141L231.5 141" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M231 141L138 224" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M231 141L300 220" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158 61V224" stroke="#8270A0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.45" d="M174.71 110.605C173.882 110.64 173.24 111.34 173.276 112.168L173.856 125.655C173.891 126.483 174.591 127.125 175.419 127.09C176.246 127.054 176.888 126.354 176.853 125.526L176.337 113.538L188.326 113.022C189.154 112.986 189.796 112.287 189.76 111.459C189.725 110.631 189.025 109.989 188.197 110.025L174.71 110.605ZM173.596 166.116C173.583 166.944 174.244 167.626 175.072 167.639L188.571 167.852C189.399 167.865 190.081 167.204 190.094 166.376C190.107 165.548 189.446 164.866 188.618 164.853L176.619 164.663L176.809 152.665C176.822 151.836 176.161 151.154 175.333 151.141C174.504 151.128 173.822 151.789 173.809 152.617L173.596 166.116ZM174.774 112.103L173.76 113.209C181.839 120.622 186.023 129.567 186.174 138.599C186.324 147.626 182.448 156.927 174.052 165.062L175.096 166.139L176.14 167.217C185.04 158.593 189.339 148.525 189.173 138.549C189.007 128.577 184.382 118.883 175.788 110.998L174.774 112.103Z" fill="#8270A0"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_175_84" x1="0" y1="0" x2="258.462" y2="387.692" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFF8DC"/>
+<stop offset="1" stop-color="#FFFDF7"/>
+</linearGradient>
+<clipPath id="clip0_175_84">
+<rect width="420" height="280" fill="white"/>
+</clipPath>
+</defs>
 </svg>
