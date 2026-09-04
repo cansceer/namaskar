@@ -15,6 +15,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
+LOCAL_APP: Path | None = None
+NO_LOCAL_SYNC = False
 WATCHED = (
     ROOT / "source" / "asana_catalog_v1.xlsx",
     ROOT / "source" / "asana_catalog_v1.csv",
@@ -34,15 +36,27 @@ def run_step(label: str, args: list[str]) -> bool:
 
 
 def rebuild() -> None:
-    ok = run_step("Сборка JSON из Excel/CSV...", [sys.executable, "tools/generate_asanas.py"])
+    generate_args = [sys.executable, "tools/generate_asanas.py"]
+    if LOCAL_APP:
+        generate_args.extend(["--local-app", str(LOCAL_APP)])
+    if NO_LOCAL_SYNC:
+        generate_args.append("--no-local-sync")
+
+    ok = run_step("Сборка JSON из Excel/CSV...", generate_args)
     if ok:
         run_step("Проверка данных...", [sys.executable, "tools/validate_data.py"])
 
 
 def main() -> int:
+    global LOCAL_APP, NO_LOCAL_SYNC
+
     parser = argparse.ArgumentParser(description="Следить за source/*.xlsx и source/*.csv.")
     parser.add_argument("--interval", type=float, default=2.0, help="Интервал проверки в секундах")
+    parser.add_argument("--local-app", type=Path, default=None, help="Дополнительная локальная папка приложения")
+    parser.add_argument("--no-local-sync", action="store_true", help="Не копировать JSON в локальную папку приложения")
     args = parser.parse_args()
+    LOCAL_APP = args.local_app
+    NO_LOCAL_SYNC = args.no_local_sync
 
     print("Namaskar watcher запущен. Нажмите Ctrl+C, чтобы остановить.")
     print("Отслеживаются:")

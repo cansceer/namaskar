@@ -24,18 +24,14 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCAL_APP = Path(r"D:\cline\namaskar\app")
+LOCAL_CONFIG = ROOT / "namaskar.local.json"
 DEFAULT_CATALOGS = (
     ROOT / "source" / "asana_catalog_v1.xlsx",
     ROOT / "source" / "asana_catalog_v1.csv",
-    Path(r"D:\cline\namaskar\asana_catalog_v1.xlsx"),
-    Path(r"D:\cline\namaskar\asana_catalog_v1.csv"),
 )
 DEFAULT_STUDY = (
     ROOT / "source" / "asana_names_study.xlsx",
     ROOT / "source" / "asana_names_study.csv",
-    Path(r"D:\cline\namaskar\asana_names_study.xlsx"),
-    Path(r"D:\cline\namaskar\asana_names_study.csv"),
 )
 
 CATALOG_HEADERS = {
@@ -195,10 +191,26 @@ def write_json(path: Path, data: list[dict[str, object]]) -> None:
         file.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
 
 
-def sync_local_app() -> None:
-    if not LOCAL_APP.exists():
+def read_local_app(cli_path: Path | None, disabled: bool) -> Path | None:
+    if disabled:
+        return None
+    if cli_path:
+        return cli_path.expanduser().resolve()
+    if LOCAL_CONFIG.exists():
+        config = json.loads(LOCAL_CONFIG.read_text(encoding="utf-8"))
+        value = str(config.get("local_app", "")).strip()
+        if value:
+            return Path(value).expanduser().resolve()
+    return None
+
+
+def sync_local_app(local_app: Path | None) -> None:
+    if local_app is None:
         return
-    target = LOCAL_APP / "data"
+    if not local_app.exists():
+        print(f"Локальная папка приложения не найдена, копирование пропущено: {local_app}")
+        return
+    target = local_app / "data"
     target.mkdir(parents=True, exist_ok=True)
     for name in ("asanas.json", "study.json"):
         source = ROOT / "data" / name
@@ -207,7 +219,7 @@ def sync_local_app() -> None:
     print(f"Синхронизировано с локальным приложением: {target}")
 
 
-def build(catalog_path: Path, study_path: Path | None, mirror_root: bool, sync_local: bool) -> None:
+def build(catalog_path: Path, study_path: Path | None, mirror_root: bool, local_app: Path | None) -> None:
     asanas = [map_record(row, CATALOG_HEADERS) for row in read_table(catalog_path)]
     write_json(ROOT / "data" / "asanas.json", asanas)
     if mirror_root:
@@ -224,8 +236,7 @@ def build(catalog_path: Path, study_path: Path | None, mirror_root: bool, sync_l
     print(f"Готово: {len(asanas)} асан -> data/asanas.json")
     if study_count:
         print(f"Готово: {study_count} учебных карточек -> data/study.json")
-    if sync_local:
-        sync_local_app()
+    sync_local_app(local_app)
 
 
 def parse_args() -> argparse.Namespace:
@@ -233,7 +244,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--catalog", type=Path, default=None, help="Путь к asana_catalog_v1.xlsx или .csv")
     parser.add_argument("--study", type=Path, default=None, help="Путь к asana_names_study.xlsx или .csv")
     parser.add_argument("--no-root-mirror", action="store_true", help="Не обновлять копии asanas.json/study.json в корне")
-    parser.add_argument("--no-local-sync", action="store_true", help="Не копировать JSON в D:\\cline\\namaskar\\app")
+    parser.add_argument("--local-app", type=Path, default=None, help="Дополнительная локальная папка приложения")
+    parser.add_argument("--no-local-sync", action="store_true", help="Не копировать JSON в локальную папку приложения")
     return parser.parse_args()
 
 
@@ -242,7 +254,8 @@ def main() -> int:
     try:
         catalog = args.catalog or first_existing(DEFAULT_CATALOGS)
         study = args.study or first_existing(DEFAULT_STUDY)
-        build(catalog, study, mirror_root=not args.no_root_mirror, sync_local=not args.no_local_sync)
+        local_app = read_local_app(args.local_app, disabled=args.no_local_sync)
+        build(catalog, study, mirror_root=not args.no_root_mirror, local_app=local_app)
     except Exception as error:
         print(f"Ошибка: {error}", file=sys.stderr)
         return 1
