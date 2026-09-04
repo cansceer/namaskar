@@ -76,3 +76,14 @@ git push origin main
 Excel -> Python-скрипт -> JSON -> GitHub -> Vercel.
 
 Это бесплатно и не усложняет само приложение.
+
+## Облачный вариант через GitHub
+
+Если хочется работать без привязки к компьютеру, редактируйте CSV-файлы в GitHub:
+
+- `source/asana_catalog_v1.csv`
+- `source/asana_names_study.csv`
+
+Workflow `.github/workflows/build-data.yml` сам пересоберет JSON, проверит данные
+и закоммитит готовые файлы обратно в репозиторий. Подробная инструкция есть в
+`GITHUB_WORKFLOW.md`.
